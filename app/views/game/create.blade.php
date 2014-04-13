@@ -1,6 +1,8 @@
 @extends('layout.default')
 
 @section('content')
-    <h1>Create New Game</h1>
+    <div class="page-header">
+        <h1>Create New Game</h1>
+    </div>
 
 @stop
