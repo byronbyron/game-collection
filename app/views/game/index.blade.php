@@ -7,7 +7,7 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-            {{ link_to_action('games.create', 'Create Game', null, ['class' => 'btn btn-primary']) }}
+            {{ link_to_action('games.create', 'Create New Game', null, ['class' => 'btn btn-primary']) }}
         </div>
     </div>
 
@@ -20,6 +20,7 @@
                     <th>Title</th>
                     <th>Publisher</th>
                     <th>Completed</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,10 @@
                         <td>{{ $game->title }}</td>
                         <td>{{ $game->publisher }}</td>
                         <td>{{ $game->completed ? 'yes' : 'no' }}</td>
+                        <td>
+                            {{ link_to_route('games.edit', 'Edit', $game->id, ['class' => 'btn btn-default']) }}
+                            {{ link_to_route('games.destroy', 'Delete', $game->id, ['class' => 'btn btn-danger']) }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

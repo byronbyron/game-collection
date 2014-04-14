@@ -30,7 +30,7 @@ class GameController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		
 	}
 
 	/**
@@ -74,7 +74,7 @@ class GameController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		return View::make('game.delete');
 	}
 
 }
