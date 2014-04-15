@@ -30,7 +30,13 @@ class GameController extends \BaseController {
 	 */
 	public function store()
 	{
-		
+		$game = new Game;
+		$game->title = Input::get('title');
+		$game->publisher = Input::get('publisher');
+		$game->completed = Input::has('completed');
+		$game->save();
+
+		return Redirect::route('games.index');
 	}
 
 	/**
