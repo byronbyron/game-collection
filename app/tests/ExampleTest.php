@@ -7,11 +7,15 @@ class ExampleTest extends TestCase {
 	 *
 	 * @return void
 	 */
-	public function testBasicExample()
+	public function test_display_games_collection()
 	{
-		$crawler = $this->client->request('GET', '/');
-
-		$this->assertTrue($this->client->getResponse()->isOk());
+		$this->call('GET', 'games');
+		$this->assertResponseOk();
 	}
 
+	public function test_displays_form_for_creating_a_new_game()
+	{
+		$this->call('GET', 'games/create');
+		$this->assertResponseOk();
+	}
 }
