@@ -1,6 +1,6 @@
 <?php
 
-class GameController extends \BaseController {
+class GamesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,7 +10,8 @@ class GameController extends \BaseController {
 	public function index()
 	{
 		$games = Game::all();
-		return View::make('game.index', compact('games'));
+		
+		return View::make('games.index', compact('games'));
 	}
 
 	/**
@@ -20,7 +21,7 @@ class GameController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('game.create');
+		return View::make('games.create');
 	}
 
 	/**
@@ -47,7 +48,9 @@ class GameController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$game = Game::findOrFail($id);
+
+		return View::make('games.show', compact('game'));
 	}
 
 	/**
@@ -58,7 +61,7 @@ class GameController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('game.edit');
+		return View::make('games.edit');
 	}
 
 	/**
@@ -80,7 +83,7 @@ class GameController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return View::make('game.delete');
+		return View::make('games.delete');
 	}
 
 }

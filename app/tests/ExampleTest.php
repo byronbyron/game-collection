@@ -7,15 +7,21 @@ class ExampleTest extends TestCase {
 	 *
 	 * @return void
 	 */
-	public function test_display_games_collection()
+	public function testGamesIndex()
 	{
 		$this->call('GET', 'games');
-		$this->assertResponseOk();
+		$this->assertViewHas('games');
 	}
 
-	public function test_displays_form_for_creating_a_new_game()
+	public function testGamesCreate()
 	{
 		$this->call('GET', 'games/create');
 		$this->assertResponseOk();
+	}
+
+	public function testGamesShow()
+	{
+		$this->call('GET', 'games/1');
+		$this->assertViewHas('game');
 	}
 }

@@ -26,7 +26,7 @@
             <tbody>
                 @foreach($games as $game)
                     <tr>
-                        <td>{{ $game->title }}</td>
+                        <td>{{ link_to_route('games.show', $game->title, $game->id) }}</td>
                         <td>{{ $game->publisher }}</td>
                         <td>{{ $game->completed ? 'yes' : 'no' }}</td>
                         <td>

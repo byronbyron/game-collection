@@ -9,14 +9,23 @@ class GamesTableSeeder extends Seeder {
         Game::truncate();
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Game::create([
-                'title' => $faker->sentence(3),
-                'publisher' => $faker->word,
-                'completed' => $faker->boolean()
-			]);
-		}
+		Game::create([
+            'title' => 'Call of Duty',
+            'publisher' => 'Activision',
+            'completed' => true
+        ]);
+
+        Game::create([
+            'title' => 'Battlefield',
+            'publisher' => 'Electronic Arts',
+            'completed' => true
+        ]);
+
+        Game::create([
+            'title' => 'SSX',
+            'publisher' => 'Electronic Arts',
+            'completed' => false
+        ]);
 	}
 
 }
