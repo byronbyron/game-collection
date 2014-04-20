@@ -61,7 +61,8 @@ class GamesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('games.edit');
+		$game = Game::findOrFail($id);
+		return View::make('games.edit', compact('game'));
 	}
 
 	/**
@@ -72,7 +73,13 @@ class GamesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$game = Game::findOrFail($id);
+		$game->title = Input::get('title');
+		$game->publisher = Input::get('publisher');
+		$game->completed = Input::has('completed');
+		$game->save();
+
+		return Redirect::route('games.index');
 	}
 
 	/**
