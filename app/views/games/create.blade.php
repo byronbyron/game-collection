@@ -16,7 +16,7 @@
         </div>
         <div class="checkbox">
             {{ Form::label('completed', 'Completed?') }}
-            {{ Form::checkbox('completed', false) }}
+            {{ Form::checkbox('completed') }}
         </div>
         {{ Form::submit('Create Game', ['class' => 'btn btn-primary']) }}
         {{ link_to_route('games.index', 'Cancel', null, ['class' => 'btn btn-link']) }}
