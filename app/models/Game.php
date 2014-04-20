@@ -1,5 +1,5 @@
 <?php
 
 class Game extends Eloquent {
-    protected $fillable = ['title', 'publisher', 'completed'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 }
