@@ -18,8 +18,18 @@
             {{ Form::label('completed', 'Completed?') }}
             {{ Form::checkbox('completed') }}
         </div>
-        {{ Form::submit('Create Game', ['class' => 'btn btn-primary']) }}
-        {{ link_to_route('games.index', 'Cancel', null, ['class' => 'btn btn-link']) }}
+        <div class="form-group">
+            {{ Form::submit('Create Game', ['class' => 'btn btn-primary']) }}
+            {{ link_to_route('games.index', 'Cancel', null, ['class' => 'btn btn-link']) }}
+        </div>
     {{ Form::close() }}
+
+    @if (Session::has('errors'))
+        <ul class="list-group">
+            @foreach (Session::get('errors') as $error)
+                <li class="list-group-item list-group-item-danger">{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 
 @stop

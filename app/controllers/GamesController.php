@@ -31,11 +31,22 @@ class GamesController extends \BaseController {
 	 */
 	public function store()
 	{
+		$title = Input::get('title');
+		$publisher = Input::get('publisher');
+
+		$errors = [];
+
+		if ( ! $title) $errors['title'] = 'Please provide a title';
+		if ( ! $publisher) $errors['publisher'] = 'Please specify a publisher';
+
+		if ($errors) return Redirect::back()->with('errors', $errors);
+
 		$game = new Game;
 		$game->title = Input::get('title');
 		$game->publisher = Input::get('publisher');
 		$game->completed = Input::has('completed');
 		$game->save();
+		dd($game);
 
 		return Redirect::route('games.index');
 	}
