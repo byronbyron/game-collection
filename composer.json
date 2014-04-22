@@ -18,7 +18,10 @@
 		],
 		"files": [
 			"app/helpers.php"
-		]
+		],
+		"psr-4": {
+			"GameCollection\\": "app/GameCollection"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

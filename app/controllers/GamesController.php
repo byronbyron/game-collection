@@ -1,6 +1,15 @@
 <?php
 
+use GameCollection\Services\Validation\GameValidator as Validator;
+
 class GamesController extends \BaseController {
+
+	protected $validator;
+
+	public function __construct(Validator $validator)
+	{
+		$this->validator = $validator;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -31,22 +40,16 @@ class GamesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$title = Input::get('title');
-		$publisher = Input::get('publisher');
-
-		$errors = [];
-
-		if ( ! $title) $errors['title'] = 'Please provide a title';
-		if ( ! $publisher) $errors['publisher'] = 'Please specify a publisher';
-
-		if ($errors) return Redirect::back()->with('errors', $errors);
+		if ( ! $this->validator->validate(Input::all()))
+		{
+			return Redirect::back()->withErrors($this->validator->errors())->withInput();
+		}
 
 		$game = new Game;
 		$game->title = Input::get('title');
 		$game->publisher = Input::get('publisher');
 		$game->completed = Input::has('completed');
 		$game->save();
-		dd($game);
 
 		return Redirect::route('games.index');
 	}
