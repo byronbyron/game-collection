@@ -9,10 +9,12 @@
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
             {{ Form::text('title', null, ['class' => 'form-control']) }}
+            {{ $errors->first('title', '<span class="">:message</span>') }}
         </div>
         <div class="form-group">
             {{ Form::label('publisher', 'Publisher') }}
             {{ Form::text('publisher', null, ['class' => 'form-control']) }}
+            {{ $errors->first('publisher', '<span class="">:message</span>') }}
         </div>
         <div class="checkbox">
             {{ Form::label('completed', 'Completed?') }}

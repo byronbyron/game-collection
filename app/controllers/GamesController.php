@@ -87,6 +87,11 @@ class GamesController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		if ( ! $this->validator->validate(Input::all()))
+		{
+			return Redirect::back()->withErrors($this->validator->errors())->withInput();
+		}
+		
 		$game = Game::findOrFail($id);
 		$game->title = Input::get('title');
 		$game->publisher = Input::get('publisher');
