@@ -4,13 +4,6 @@ use GameCollection\Services\Validation\GameValidator as Validator;
 
 class GamesController extends \BaseController {
 
-	protected $validator;
-
-	public function __construct(Validator $validator)
-	{
-		$this->validator = $validator;
-	}
-
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -40,16 +33,16 @@ class GamesController extends \BaseController {
 	 */
 	public function store()
 	{
-		if ( ! $this->validator->validate(Input::all()))
-		{
-			return Redirect::back()->withErrors($this->validator->errors())->withInput();
-		}
-
 		$game = new Game;
 		$game->title = Input::get('title');
 		$game->publisher = Input::get('publisher');
 		$game->completed = Input::has('completed');
 		$game->save();
+
+		if ( ! $game->save())
+		{
+			return Redirect::back()->withErrors($game->getErrors())->withInput();
+		}
 
 		return Redirect::route('games.index');
 	}
@@ -76,6 +69,7 @@ class GamesController extends \BaseController {
 	public function edit($id)
 	{
 		$game = Game::findOrFail($id);
+		
 		return View::make('games.edit', compact('game'));
 	}
 
@@ -86,17 +80,17 @@ class GamesController extends \BaseController {
 	 * @return Response
 	 */
 	public function update($id)
-	{
-		if ( ! $this->validator->validate(Input::all()))
-		{
-			return Redirect::back()->withErrors($this->validator->errors())->withInput();
-		}
-		
+	{		
 		$game = Game::findOrFail($id);
 		$game->title = Input::get('title');
 		$game->publisher = Input::get('publisher');
 		$game->completed = Input::has('completed');
 		$game->save();
+
+		if ( ! $game->save())
+		{
+			return Redirect::back()->withErrors($game->getErrors())->withInput();
+		}
 
 		return Redirect::route('games.index');
 	}
