@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-header">
-        <h1>Games Collection</h1>
+        <h1>Game Collection</h1>
     </div>
 
     <div class="panel panel-default">

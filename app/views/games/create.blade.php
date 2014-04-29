@@ -5,7 +5,7 @@
         <h1>Create New Game</h1>
     </div>
 
-    {{ Form::open(['method' => 'POST', 'route' => 'games.store']) }}
+    {{ Form::open(['method' => 'POST', 'route' => 'games.store', 'class' => 'well']) }}
         @include('games/partials/_form')
     {{ Form::close() }}
 
