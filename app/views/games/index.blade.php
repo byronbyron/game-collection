@@ -12,7 +12,9 @@
     </div>
 
     @if ($games->isEmpty())
-        <p>There are no games in the collection.</p>
+        <div class="alert alert-warning">
+            <p>There are no games in the collection.</p>
+        </div>
     @else
         <table class="table table-striped">
             <thead>
