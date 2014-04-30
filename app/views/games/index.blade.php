@@ -30,8 +30,11 @@
                         <td>{{ $game->publisher }}</td>
                         <td>{{ $game->completed ? 'yes' : 'no' }}</td>
                         <td>
-                            {{ link_to_route('games.edit', 'Edit', $game->id, ['class' => 'btn btn-default']) }}
-                            {{ link_to_route('games.destroy', 'Delete', $game->id, ['class' => 'btn btn-danger']) }}
+                            {{ link_to_route('games.edit', 'Edit', $game->id, ['class' => 'btn btn-xs btn-primary']) }}
+                            {{ Form::open(['url' => 'games/' . $game->id, 'class' => 'pull-right']) }}
+                                {{ Form::hidden('_method', 'DELETE') }}
+                                {{ Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) }}
+                            {{ Form::close() }}
                         </td>
                     </tr>
                 @endforeach

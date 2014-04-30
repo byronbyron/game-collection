@@ -103,7 +103,10 @@ class GamesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return View::make('games.delete');
+		$game = Game::findOrFail($id);
+		$game->delete();
+
+		return Redirect::route('games.index');
 	}
 
 }

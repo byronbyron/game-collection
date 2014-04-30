@@ -14,5 +14,5 @@
 </div>
 <div class="form-group">
     {{ Form::submit(isset($buttonText) ? $buttonText : 'Create Game', ['class' => 'btn btn-primary']) }}
-    {{ link_to_route('games.index', 'Cancel', null, ['class' => 'btn btn-link']) }}
+    {{ link_to_route('games.index', 'Cancel', null, ['class' => 'btn btn-default']) }}
 </div>
