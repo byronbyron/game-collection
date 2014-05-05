@@ -13,14 +13,6 @@ class UsersTableSeeder extends Seeder {
             'email' => 'byronswfc@gmail.com',
             'password' => Hash::make('password')
         ]);
-
-		foreach(range(1, 9) as $index)
-		{
-			User::create([
-                'email' => $faker->email,
-                'password' => Hash::make($faker->word)
-			]);
-		}
 	}
 
 }
