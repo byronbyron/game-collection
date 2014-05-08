@@ -17,6 +17,7 @@ class CreateGamesTable extends Migration {
 			$table->string('title');
 			$table->string('publisher');
 			$table->boolean('completed');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
