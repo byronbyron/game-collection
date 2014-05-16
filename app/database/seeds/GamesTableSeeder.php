@@ -9,6 +9,12 @@ class GamesTableSeeder extends Seeder {
         Game::truncate();
 		$faker = Faker::create();
 
+        Game::create([
+            'title' => 'Battlefield',
+            'publisher' => 'Electronic Arts',
+            'completed' => true
+        ]);
+
 		Game::create([
             'title' => 'Call of Duty',
             'publisher' => 'Activision',
@@ -16,14 +22,26 @@ class GamesTableSeeder extends Seeder {
         ]);
 
         Game::create([
-            'title' => 'Battlefield',
-            'publisher' => 'Electronic Arts',
+            'title' => 'Grand Theft Auto V',
+            'publisher' => 'Rockstar',
             'completed' => true
         ]);
 
         Game::create([
             'title' => 'SSX',
             'publisher' => 'Electronic Arts',
+            'completed' => false
+        ]);
+
+        Game::create([
+            'title' => 'Dead Space 3',
+            'publisher' => 'Electronic Arts',
+            'completed' => false
+        ]);
+
+        Game::create([
+            'title' => 'Rayman Origins',
+            'publisher' => 'Ubisoft',
             'completed' => false
         ]);
 	}
