@@ -37,7 +37,7 @@ class SessionsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy()
+	public function destroy($id = null)
 	{
 		Auth::logout();
 

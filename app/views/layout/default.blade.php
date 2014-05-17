@@ -20,9 +20,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
+                <li><a href="/games">Games</a></li>
                 <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
+                @if (Auth::guest())
+                    <li><a href="/login">Login</a></li>
+                @else
+                    <li><a href="/logout">Logout</a></li>
+                @endif
             </ul>
 
         </div>
