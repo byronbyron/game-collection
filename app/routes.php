@@ -1,17 +1,12 @@
 <?php
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@index']);
 
-Route::group(array('before' => 'auth'), function()
-{
-    Route::get('profile', function() {
-        return "Welcome. Your email address is " . Auth::user()->email;
-    });
+Route::get('register', 'RegistrationController@create');
+Route::resource('registration', 'RegistrationController');
 
-    Route::resource('games', 'GamesController');
+Route::resource('games', 'GamesController');
 
-    Route::get('logout', 'SessionsController@destroy');
-});
-
+Route::get('logout', 'SessionsController@destroy');
 Route::get('login', 'SessionsController@create');
 Route::resource('sessions', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);

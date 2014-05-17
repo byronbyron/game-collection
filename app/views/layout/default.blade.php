@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body role="document">
-    @include('layout/partials/_navigation')
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {{ link_to('/', 'Game Collection', ['class' => 'navbar-brand']) }}
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+</div>
     <div class="container" role="main">
         @if (Session::get('flash_message'))
             <div class="alert alert-warning">
