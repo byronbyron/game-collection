@@ -1,12 +1,16 @@
 <?php
 
+# Home
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@index']);
 
+# Registration
 Route::get('register', 'RegistrationController@create');
-Route::resource('registration', 'RegistrationController', ['only' => ['create', 'store']]);
+Route::post('/register', ['as' => 'register.store', 'uses' => 'RegisterController@store']);
 
-Route::resource('games', 'GamesController');
-
-Route::get('logout', 'SessionsController@destroy');
-Route::get('login', 'SessionsController@create');
+# Authentication
+Route::get('logout', ['as' => 'login', 'uses' => 'SessionsController@destroy']);
+Route::get('login', ['as' => 'logout', 'uses' => 'SessionsController@create']);
 Route::resource('sessions', 'SessionsController', ['only' => ['create', 'store', 'destroy']]);
+
+# Games
+Route::resource('games', 'GamesController');
