@@ -1,6 +1,18 @@
 <?php
 
+use MyGames\Forms\Login;
+
 class SessionsController extends \BaseController {
+
+	protected $loginForm;
+
+	/**
+	 * @var MyGames\Forms\Login;
+	 */
+	public function __construct(Login $loginForm)
+	{
+		$this->loginForm = $loginForm;
+	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -19,16 +31,16 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$session = Input::all();
+		$input = Input::only('email', 'password');
 
-		$attempt = Auth::attempt([
-			'email' => $session['email'],
-			'password' => $session['password']
-		]);
+		$this->loginForm->validate($input);
 
-		if ($attempt) return Redirect::intended('games')->with('flash_message', 'You have been logged in successfully!');
+		if (Auth::attempt($input))
+		{
+			return Redirect::intended('/')->with('flash_message', 'You have been logged in successfully!');
+		}
 
-		return Redirect::back()->with('flash_message', 'Invalid email or password.')->withInput();
+		return Redirect::back()->withInput()->with('flash_message', 'Wrong Email and password combination.');
 	}
 
 	/**

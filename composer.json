@@ -4,7 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+		"laracasts/validation": "1.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -16,10 +17,10 @@
 			"app/tests/TestCase.php"
 		],
 		"files": [
-			"app/helpers.php"
+			"app/MyGames/helpers.php"
 		],
 		"psr-4": {
-			"GameCollection\\": "app/GameCollection"
+			"MyGames\\": "app/MyGames"
 		}
 	},
 	"scripts": {

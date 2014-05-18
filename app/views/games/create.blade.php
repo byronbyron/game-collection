@@ -1,9 +1,7 @@
-@extends('layout.default')
+@extends('layouts.master')
 
 @section('content')
-    <div class="page-header">
-        <h1>Create New Game</h1>
-    </div>
+    <h1>Create New Game</h1>
 
     {{ Form::open(['method' => 'POST', 'route' => 'games.store', 'class' => 'well']) }}
         @include('games/partials/_form')

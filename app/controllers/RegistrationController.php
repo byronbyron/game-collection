@@ -1,6 +1,18 @@
 <?php
 
+use MyGames\Forms\Registration;
+
 class RegistrationController extends \BaseController {
+
+	protected $registrationForm;
+
+	/**
+	 * @var MyGames\Forms\Registration
+	 */
+	public function __construct(Registration $registrationForm)
+	{
+		$this->registrationForm = $registrationForm;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -29,11 +41,15 @@ class RegistrationController extends \BaseController {
 	 */
 	public function store()
 	{
-		$user = User::create(Input::only('username', 'email', 'password'));
+		$input = Input::only('username', 'email', 'password', 'password_confirmation');
+
+		$this->registrationForm->validate($input);
+
+		$user = User::create($input);
 
 		Auth::login($user);
 
-		return Redirect::home();
+		return Redirect::home();		
 	}
 
 	/**
