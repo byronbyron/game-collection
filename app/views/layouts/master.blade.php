@@ -17,7 +17,11 @@
             </div>
         @endif
         
-        @yield('content')
+        <div class="row">
+            <div class="col-md-9">
+                @yield('content')
+            </div>
+        </div>
     </div>
     <!-- /.container -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

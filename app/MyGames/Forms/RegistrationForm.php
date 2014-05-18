@@ -2,7 +2,7 @@
 
 use Laracasts\Validation\FormValidator;
 
-class Registration extends FormValidator {
+class RegistrationForm extends FormValidator {
 
     /**
      * Validation rules for registering

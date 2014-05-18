@@ -1,15 +1,15 @@
 <?php
 
-use MyGames\Forms\Login;
+use MyGames\Forms\LoginForm;
 
 class SessionsController extends \BaseController {
 
 	protected $loginForm;
 
 	/**
-	 * @var MyGames\Forms\Login;
+	 * @var MyGames\Forms\LoginForm;
 	 */
-	public function __construct(Login $loginForm)
+	public function __construct(LoginForm $loginForm)
 	{
 		$this->loginForm = $loginForm;
 	}

@@ -1,15 +1,15 @@
 <?php
 
-use MyGames\Forms\Registration;
+use MyGames\Forms\RegistrationForm;
 
 class RegistrationController extends \BaseController {
 
 	protected $registrationForm;
 
 	/**
-	 * @var MyGames\Forms\Registration
+	 * @var MyGames\Forms\RegistrationForm
 	 */
-	public function __construct(Registration $registrationForm)
+	public function __construct(RegistrationForm $registrationForm)
 	{
 		$this->registrationForm = $registrationForm;
 	}
