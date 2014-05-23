@@ -7,7 +7,8 @@ class Profile extends Eloquent {
         'bio',
         'twitter_username',
         'facebook_username',
-        'github_username'
+        'github_username',
+        'thumbnail'
     ];
 
     public function user()

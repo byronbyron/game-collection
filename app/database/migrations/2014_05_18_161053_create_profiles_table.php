@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration {
 			$table->string('twitter_username')->nullable();
 			$table->string('facebook_username')->nullable();
 			$table->string('github_username')->nullable();
+			$table->string('thumbnail')->nullable();
 			$table->timestamps();
 		});
 	}
