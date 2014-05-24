@@ -15,16 +15,6 @@ class RegistrationController extends \BaseController {
 	}
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
@@ -41,59 +31,29 @@ class RegistrationController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::only('username', 'email', 'password', 'password_confirmation');
+		$userInput = Input::only(
+			'username',
+			'email',
+			'password',
+			'password_confirmation'
+		);
 
-		$this->registrationForm->validate($input);
+		$profileInput = Input::only(
+			'location',
+			'bio',
+			'twitter_username',
+			'facebook_username',
+			'github_username'
+		);
 
-		$user = User::create($input);
+		$this->registrationForm->validate($userInput);
+
+		$user = User::create($userInput);
+		$user->profile()->save(new Profile($profileInput));
 
 		Auth::login($user);
 
 		return Redirect::home();		
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 }
