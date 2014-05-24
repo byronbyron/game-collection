@@ -2,14 +2,16 @@
 
 return [
 
-    'default' => 'sqlite',
+    'default' => 'mysql',
 
-    'connections' => [
-
-        'sqlite' => [
-            'driver'   => 'sqlite',
-            'database' => __DIR__.'/../../database/local.sqlite',
-            'prefix'   => '',
-        ]
+    'mysql' => [
+        'driver'    => 'mysql',
+        'host'      => 'localhost',
+        'database'  => 'games',
+        'username'  => 'root',
+        'password'  => 'root',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => ''
     ]
 ];
