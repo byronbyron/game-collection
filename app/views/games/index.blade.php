@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Game Collection</h1>
+    <div class="page-header">
+        <h1>Game Collection</h1>
+    </div>
     
     {{ link_to_action('games.create', 'Create New Game', null, ['class' => 'btn btn-primary']) }}
 

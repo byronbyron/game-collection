@@ -1,12 +1,15 @@
 @extends('layouts/master')
 
 @section('content')
-    <h1>
-        {{ $user->username }}
-        @if ($user->profile->location)
-            <small>{{ $user->profile->location }}</small>
-        @endif
-    </h1>
+    
+    <div class="page-header">
+        <h1>
+            {{ $user->username }}
+            @if ($user->profile->location)
+                <small>{{ $user->profile->location }}</small>
+            @endif
+        </h1>
+    </div>
     @if ($user->profile->bio)
         <div class="bio">
             <p>{{ $user->profile->bio }}</p>
@@ -34,4 +37,5 @@
     @if ($user->isCurrent())
         {{ link_to_route('profile.edit', 'Edit your profile', $user->username) }}
     @endif
+    
 @stop

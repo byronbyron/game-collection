@@ -1,9 +1,11 @@
 @extends('layouts/master')
 
 @section('content')
-    <h1>Edit Profile</h1>
+    <div class="page-header">
+        <h1>Edit Profile</h1>
+    </div>
 
-    {{ Form::model($user->profile, ['method' => 'PATCH', 'route' => ['profile.update', $user->username]]) }}
+    {{ Form::model($user->profile, ['method' => 'PATCH', 'route' => ['profile.update', $user->username], 'class' => 'well col-md-6']) }}
 
     <!-- Location Field -->
     <div class="form-group">

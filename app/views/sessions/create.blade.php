@@ -3,9 +3,11 @@
 @section('meta-title', 'Login - Game Collection')
 
 @section('content')
-    <h1>Login</h1>
+    <div class="page-header">
+        <h1>Login</h1>
+    </div>
 
-    {{ Form::open(['route' => 'sessions.store']) }}
+    {{ Form::open(['route' => 'sessions.store', 'class' => 'well col-md-6']) }}
         <!-- Email Field -->
         <div class="form-group">
             {{ Form::label('email', 'Email') }}
