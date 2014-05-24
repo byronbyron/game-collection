@@ -70,6 +70,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasOne('Profile');
 	}
 
+	public function games()
+    {
+        return $this->hasMany('Game');
+    }
+
 	public function isCurrent()
 	{
 		if (Auth::guest()) return false;

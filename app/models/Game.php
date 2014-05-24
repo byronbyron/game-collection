@@ -11,4 +11,8 @@ class Game extends BaseModel {
         'publisher' => 'required'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
 }
