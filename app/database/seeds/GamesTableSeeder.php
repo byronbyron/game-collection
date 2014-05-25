@@ -1,13 +1,10 @@
 <?php
 
-use Faker\Factory as Faker;
-
 class GamesTableSeeder extends Seeder {
 
 	public function run()
 	{
         Game::truncate();
-		$faker = Faker::create();
 
         Game::create([
             'user_id' => 1,
