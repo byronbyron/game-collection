@@ -4,8 +4,6 @@ class ProfilesTableSeeder extends Seeder {
 
     public function run()
     {
-        Profile::truncate();
-
         Profile::create([
             'user_id' => 1,
             'location' => 'Sheffield',
