@@ -4,8 +4,6 @@ class GamesTableSeeder extends Seeder {
 
 	public function run()
 	{
-        Game::truncate();
-
         Game::create([
             'user_id' => 1,
             'title' => 'Battlefield',
