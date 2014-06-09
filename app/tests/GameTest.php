@@ -6,10 +6,13 @@ class GameTest extends AppTester {
 	public function it_fetches_games()
 	{
 		$this->makeGame();
-
-		$this->call('GET', 'games');
+		
+		$response = $this->call('GET', 'games');
+		$games = $response->original->getData()['games'];
 
 		$this->assertResponseOk();
+		$this->assertViewHas('games');
+		$this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $games);
 	}
 
 	private function makeGame($gameFields = [])
