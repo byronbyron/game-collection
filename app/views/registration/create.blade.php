@@ -3,44 +3,45 @@
 @section('meta-title', 'Regiser - Game Collerction')
 
 @section('content')
-    <div class="page-header">
-        <h1>Register</h1>
-    </div>
-        
-    {{ Form::open(['route' => 'registration.store', 'class' => 'well col-md-6']) }}
+    
+<h1>Register</h1>
+    
+{{ Form::open(['route' => 'registration.store']) }}
 
+<ul>
     <!-- Username Field -->
-    <div class="form-group">
+    <li>
         {{ Form::label('username', 'Username:') }}
-        {{ Form::text('username', null, ['class' => 'form-control', 'required' => 'required']) }}
-        {{ $errors->first('username', '<span class="text-danger">:message</span>') }}
-    </div>
+        {{ Form::text('username', null, ['required' => 'required']) }}
+        {{ errors_for('username', $errors) }}
+    </li>
 
     <!-- Email Field -->
-    <div class="form-group">
+    <li>
         {{ Form::label('email', 'Email:') }}
-        {{ Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) }}
-        {{ $errors->first('email', '<span class="text-danger">:message</span>') }}
-    </div>
+        {{ Form::email('email', null, ['required' => 'required']) }}
+        {{ errors_for('email', $errors) }}
+    </li>
 
     <!-- Password Field -->
-    <div class="form-group">
+    <li>
         {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}
-        {{ $errors->first('password', '<span class="text-danger">:message</span>') }}
-    </div>
+        {{ Form::password('password', ['required' => 'required']) }}
+        {{ errors_for('password', $errors) }}
+    </li>
 
     <!-- Password Confirmation Field -->
-    <div class="form-group">
+    <li>
         {{ Form::label('password_confirmation', 'Password Confirmation:') }}
-        {{ Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required']) }}
-    </div>
+        {{ Form::password('password_confirmation', ['required' => 'required']) }}
+    </li>
 
     <!-- Submit Field -->
-    <div class="form-group">
-        {{ Form::submit('Create Account', ['class' => 'btn btn-primary']) }}
-    </div>
+    <li>
+        {{ Form::submit('Create Account') }}
+    </li>
+</ul>
 
-    {{ Form::close() }}
+{{ Form::close() }}
     
 @stop

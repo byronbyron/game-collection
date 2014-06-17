@@ -3,29 +3,32 @@
 @section('meta-title', 'Login - Game Collection')
 
 @section('content')
-    <div class="page-header">
-        <h1>Login</h1>
-    </div>
 
-    {{ Form::open(['route' => 'sessions.store', 'class' => 'well col-md-6']) }}
-        <!-- Email Field -->
-        <div class="form-group">
-            {{ Form::label('email', 'Email') }}
-            {{ Form::email('email', null, ['class' => 'form-control']) }}
-            {{ errors_for('email', $errors) }}
-        </div>
+<h1>Login</h1>
 
-        <!-- Password Field -->
-        <div class="form-group">
-            {{ Form::label('password', 'Password') }}
-            {{ Form::password('password', ['class' => 'form-control']) }}
-            {{ errors_for('password', $errors) }}
-        </div>
+{{ Form::open(['route' => 'sessions.store']) }}
 
-        <!-- Submit Field -->
-        <div class="form-group">
-            {{ Form::submit('Login', ['class' => 'btn btn-primary']) }}
-        </div>
+<ul>
+    <!-- Email Field -->
+    <li>
+        {{ Form::label('email', 'Email') }}
+        {{ Form::email('email') }}
+        {{ errors_for('email', $errors) }}
+    </li>
 
-    {{ Form::close() }}
+    <!-- Password Field -->
+    <li>
+        {{ Form::label('password', 'Password') }}
+        {{ Form::password('password') }}
+        {{ errors_for('password', $errors) }}
+    </li>
+
+    <!-- Submit Field -->
+    <li>
+        {{ Form::submit('Login') }}
+    </li>
+</ul>
+
+{{ Form::close() }}
+
 @stop

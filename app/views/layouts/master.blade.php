@@ -2,30 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>@yield('meta-title', 'Game Collection')</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
-<body role="document">
-    
-    @include('layouts/partials/_navbar')
+<body>
 
     <div class="container" role="main">
+        @include('layouts/partials/_navigation')
+
         @if (Session::get('flash_message'))
-            <div class="alert alert-info alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{ Session::get('flash_message') }}
-            </div>
+            {{ Session::get('flash_message') }}
         @endif
-        
-        <div class="row">
-            <div class="col-md-12">
-                @yield('content')
-            </div>
-        </div>
+
+        @yield('content')
     </div>
-    <!-- /.container -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

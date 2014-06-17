@@ -15,5 +15,5 @@ function link_to_profile($text = 'Profile')
 
 function errors_for($attribute, $errors)
 {
-    return $errors->first($attribute, '<span class="text-danger">:message</span>');
+    return $errors->first($attribute, '<span class="errors">:message</span>');
 }
