@@ -4,7 +4,7 @@
 
 <h1>Game Collection</h1>
  
-{{ link_to_action('games.create', 'Create New Game') }}
+<p>{{ link_to_action('games.create', 'Create New Game') }}</p>
 
 @if ($games->isEmpty())
     <p>There are no games in the collection.</p>

@@ -17,3 +17,20 @@ h1 {
 table {
     width: 100%;
 }
+table th {
+    text-align: left;
+}
+table th,
+table td {
+}
+table form {
+    display: inline;
+}
+table input {
+    border: none;
+    background: none;
+    display: inline;
+    padding: 0;
+    color: blue;
+    text-decoration: underline;
+}
