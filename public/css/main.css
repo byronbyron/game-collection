@@ -1,19 +1,57 @@
 body {
     font-family: "Helvetica Neue", sans-serif;
     font-size: 100%;
-    line-height: 1.5em;
+    line-height: 1.6em;
     height: 100%;
     margin: 0;
+    color: #555;
 }
-h1 {
-    font-family: Georgia, serif;
+h1, h2, h3, h4, h5, h6 {
+    color: #474747;
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-family: Georgia ,serif;
     line-height: 1em;
 }
-.container {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 1em;
+ol, p, ul {
+    font-size: 14px;
+    margin: 0 0 1.6em;
 }
+.container {
+    max-width: 50em;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/**
+ * Header
+ */
+.top {
+    padding: 2em 0;
+}
+.top header {
+    text-align: center;
+}
+.logo h1 {
+    margin-bottom: 20px;
+}
+/**
+ * Navigation
+ */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    display: block;
+    margin: 1em;
+}
+/**
+ * Table
+ */
 table {
     width: 100%;
 }
@@ -33,4 +71,29 @@ table input {
     padding: 0;
     color: blue;
     text-decoration: underline;
+}
+/**
+ * When the screen is larger than 20ems
+ */
+@media only screen and (min-width: 20em) {
+    section {
+        padding: 20px 10px;
+        margin: 10px 40px;
+    }
+}
+/**
+ * When the screen is larger than 40ems
+ */
+@media only screen and (min-width: 40em) {
+    header nav {
+        width: 60%;
+        float: left;
+        padding-top: 20px;
+        text-align: right;
+    }
+    header .logo {
+        width: 40%;
+        float: left;
+        padding-top: 20px;
+    }
 }

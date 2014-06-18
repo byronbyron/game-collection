@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <div class="top">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1><a href="/">Game Collection</a></h1>
+                </div>
+                @include('layouts/partials/_navigation')
+            </div>
+        </header>
+    </div>
 
     <div class="container" role="main">
-        @include('layouts/partials/_navigation')
-
         @if (Session::get('flash_message'))
             {{ Session::get('flash_message') }}
         @endif
