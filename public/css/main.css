@@ -17,6 +17,15 @@ ol, p, ul {
     font-size: 14px;
     margin: 0 0 1.6em;
 }
+a {
+    text-decoration: none;
+    color: #ba1b0a;
+}
+a:hover,
+a:active {
+    text-decoration: underline;
+    color: #474747;
+}
 .container {
     max-width: 50em;
     margin: 0 auto;
@@ -67,8 +76,11 @@ table input {
     background: none;
     display: inline;
     padding: 0;
-    color: blue;
+    color: #ba1b0a;
+}
+table input:hover {
     text-decoration: underline;
+    color: #474747;
 }
 /**
  * When the screen is larger than 20ems
