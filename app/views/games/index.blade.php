@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Game Collection</h1>
+<h1>Games</h1>
  
 <p>{{ link_to_action('games.create', 'Create New Game') }}</p>
 

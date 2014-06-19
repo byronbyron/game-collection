@@ -20,14 +20,12 @@ ol, p, ul {
 .container {
     max-width: 50em;
     margin: 0 auto;
+    padding: 3em 15px;
     overflow: hidden;
 }
 /**
  * Header
  */
-.top {
-    padding: 2em 0;
-}
 .top header {
     text-align: center;
 }

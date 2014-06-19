@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <div class="top">
+    <div class="top piece">
         <header>
             <div class="container">
                 <div class="logo">
@@ -19,12 +19,14 @@
         </header>
     </div>
 
-    <div class="container" role="main">
-        @if (Session::get('flash_message'))
-            {{ Session::get('flash_message') }}
-        @endif
+    <div class="main piece">
+        <div class="container" role="main">
+            @if (Session::get('flash_message'))
+                {{ Session::get('flash_message') }}
+            @endif
 
-        @yield('content')
+            @yield('content')
+        </div>
     </div>
     
 </body>
