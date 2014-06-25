@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h1>{{ Auth::check() ? "Welcome " . Auth::user()->username : "Welcome!" }}</h1>
-
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, expedita, natus rem nobis sit voluptatibus culpa. Harum vel incidunt ab expedita quidem atque molestias exercitationem deserunt ullam ducimus. Tenetur, velit.
-</p>
+<div class="jumbotron">
+    <h1>{{ Auth::check() ? "Welcome " . Auth::user()->username : "Welcome!" }}</h1>
+    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <p><a class="btn btn-lg btn-success" href="/register" role="button">Sign up today</a></p>
+</div>
 
 @stop

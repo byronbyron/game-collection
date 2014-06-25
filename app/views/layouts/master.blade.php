@@ -1,33 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>@yield('meta-title', 'Game Collection')</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-    <div class="top piece">
-        <header>
-            <div class="container">
-                <div class="logo">
-                    <h1><a href="/">Game Collection</a></h1>
-                </div>
-                @include('layouts/partials/_navigation')
-            </div>
-        </header>
-    </div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="/assets/ico/favicon.ico">
 
-    <div class="main piece">
-        <div class="container" role="main">
+        <title>@yield('meta-title', 'Game Collection')</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- Custom styles for this template -->
+        <link href="/css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                @include('layouts/partials/_navigation')
+                <h3 class="text-muted"><a href="/">Game Collection</a></h3>
+            </div>
+
             @if (Session::get('flash_message'))
                 {{ Session::get('flash_message') }}
             @endif
 
-            @yield('content')
-        </div>
-    </div>
-    
-</body>
+            <div class="row marketing">
+                <div class="col-lg-6">
+                    @yield('content')
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>&copy; Company 2014</p>
+            </div>
+
+        </div> <!-- /container -->
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- Placed at the end of the document so the pages load faster -->
+    </body>
 </html>

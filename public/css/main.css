@@ -1,109 +1,79 @@
+/* Space out content a bit */
 body {
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 100%;
-    line-height: 1.6em;
-    height: 100%;
-    margin: 0;
-    color: #555;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-h1, h2, h3, h4, h5, h6 {
-    color: #474747;
-    margin: 0 0 20px;
-    font-weight: 400;
-    font-family: Georgia ,serif;
-    line-height: 1em;
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
 }
-ol, p, ul {
-    font-size: 14px;
-    margin: 0 0 1.6em;
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
 }
-a {
-    text-decoration: none;
-    color: #ba1b0a;
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
 }
-a:hover,
-a:active {
-    text-decoration: underline;
-    color: #474747;
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
 }
-.container {
-    max-width: 50em;
-    margin: 0 auto;
-    padding: 3em 15px;
-    overflow: hidden;
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
 }
-/**
- * Header
- */
-.top header {
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
     text-align: center;
+    border-bottom: 1px solid #e5e5e5;
 }
-.logo h1 {
-    margin-bottom: 20px;
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
 }
-/**
- * Navigation
- */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
 }
-nav li {
-    display: inline-block;
+.marketing p + h4 {
+    margin-top: 28px;
 }
-nav a {
-    display: block;
-    margin: 1em;
-}
-/**
- * Table
- */
-table {
-    width: 100%;
-}
-table th {
-    text-align: left;
-}
-table th,
-table td {
-}
-table form {
-    display: inline;
-}
-table input {
-    border: none;
-    background: none;
-    display: inline;
-    padding: 0;
-    color: #ba1b0a;
-}
-table input:hover {
-    text-decoration: underline;
-    color: #474747;
-}
-/**
- * When the screen is larger than 20ems
- */
-@media only screen and (min-width: 20em) {
-    section {
-        padding: 20px 10px;
-        margin: 10px 40px;
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
     }
-}
-/**
- * When the screen is larger than 40ems
- */
-@media only screen and (min-width: 40em) {
-    header nav {
-        width: 60%;
-        float: left;
-        padding-top: 20px;
-        text-align: right;
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
     }
-    header .logo {
-        width: 40%;
-        float: left;
-        padding-top: 20px;
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
     }
 }

@@ -1,5 +1,5 @@
 <nav>
-    <ul>
+    <ul class="nav nav-pills pull-right">
         <li><a href="/games">Games</a></li>
         @if (Auth::guest())
             <li><a href="/register">Register</a></li>
