@@ -2,7 +2,7 @@
 
 use MyGames\Forms\RegistrationForm;
 
-class RegistrationController extends \BaseController {
+class SignupController extends \BaseController {
 
 	protected $registrationForm;
 
@@ -21,7 +21,7 @@ class RegistrationController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('registration.create');
+		return View::make('signup.create');
 	}
 
 	/**

@@ -35,11 +35,7 @@
                 {{ Session::get('flash_message') }}
             @endif
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
 
             <div class="footer">
                 <p>&copy; Company 2014</p>

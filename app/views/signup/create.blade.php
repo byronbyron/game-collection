@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
-@section('meta-title', 'Regiser - Game Collerction')
+@section('meta-title', 'Sign up - Game Collerction')
 
 @section('content')
     
-<h1>Register</h1>
+<h1>Sign up</h1>
     
-{{ Form::open(['route' => 'registration.store']) }}
+{{ Form::open(['route' => 'signup.store']) }}
 
 <ul>
     <!-- Username Field -->

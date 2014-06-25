@@ -3,9 +3,9 @@
 # Home
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@index']);
 
-# Registration
-Route::get('/register', 'RegistrationController@create')->before('guest');
-Route::post('/register', ['as' => 'registration.store', 'uses' => 'RegistrationController@store']);
+# Signup
+Route::get('/signup', 'SignupController@create')->before('guest');
+Route::post('/signup', ['as' => 'signup.store', 'uses' => 'SignupController@store']);
 
 # Authentication
 Route::get('logout', ['as' => 'login', 'uses' => 'SessionsController@destroy']);
