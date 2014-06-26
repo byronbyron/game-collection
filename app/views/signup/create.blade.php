@@ -10,39 +10,37 @@
     
 {{ Form::open(['route' => 'signup.store']) }}
 
-<ul>
-    <!-- Username Field -->
-    <li>
-        {{ Form::label('username', 'Username:') }}
-        {{ Form::text('username', null, ['required' => 'required']) }}
-        {{ errors_for('username', $errors) }}
-    </li>
+<!-- Username Field -->
+<div class="form-group">
+    {{ Form::label('username', 'Username:') }}
+    {{ Form::text('username', null, ['class' => 'form-control', 'required' => 'required']) }}
+    {{ errors_for('username', $errors) }}
+</div>
 
-    <!-- Email Field -->
-    <li>
-        {{ Form::label('email', 'Email:') }}
-        {{ Form::email('email', null, ['required' => 'required']) }}
-        {{ errors_for('email', $errors) }}
-    </li>
+<!-- Email Field -->
+<div class="form-group">
+    {{ Form::label('email', 'Email:') }}
+    {{ Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) }}
+    {{ errors_for('email', $errors) }}
+</div>
 
-    <!-- Password Field -->
-    <li>
-        {{ Form::label('password', 'Password:') }}
-        {{ Form::password('password', ['required' => 'required']) }}
-        {{ errors_for('password', $errors) }}
-    </li>
+<!-- Password Field -->
+<div class="form-group">
+    {{ Form::label('password', 'Password:') }}
+    {{ Form::password('password', ['class' => 'form-control', 'required' => 'required']) }}
+    {{ errors_for('password', $errors) }}
+</div>
 
-    <!-- Password Confirmation Field -->
-    <li>
-        {{ Form::label('password_confirmation', 'Password Confirmation:') }}
-        {{ Form::password('password_confirmation', ['required' => 'required']) }}
-    </li>
+<!-- Password Confirmation Field -->
+<div class="form-group">
+    {{ Form::label('password_confirmation', 'Password Confirmation:') }}
+    {{ Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required']) }}
+</div>
 
-    <!-- Submit Field -->
-    <li>
-        {{ Form::submit('Create Account') }}
-    </li>
-</ul>
+<!-- Submit Field -->
+<div class="form-group">
+    {{ Form::submit('Create Account', ['class' => 'btn btn-success']) }}
+</div>
 
 {{ Form::close() }}
     

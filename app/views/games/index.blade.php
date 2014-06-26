@@ -6,12 +6,12 @@
     <h1>Games</h1>
 </div>
 
-<p>{{ link_to_action('games.create', 'Create New Game') }}</p>
+<p>{{ link_to_action('games.create', 'Create New Game', null, ['class' => 'btn btn-success']) }}</p>
 
 @if ($games->isEmpty())
     <p>There are no games in the collection.</p>
 @else
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Title</th>
@@ -23,14 +23,14 @@
         <tbody>
             @foreach($games as $game)
                 <tr>
-                    <td>{{ link_to_route('games.show', $game->title, $game->id) }}</td>
+                    <td>{{ link_to_route('games.show', $game->title, $game->id, ['class' => 'btn btn-xs btn-default']) }}</td>
                     <td>{{ $game->publisher }}</td>
                     <td>{{ $game->completed ? 'yes' : 'no' }}</td>
                     <td>
-                        {{ link_to_route('games.edit', 'Edit', $game->id) }}
+                        {{ link_to_route('games.edit', 'Edit', $game->id, ['class' => 'btn btn-xs btn-primary pull-left']) }}
                         {{ Form::open(['url' => 'games/' . $game->id]) }}
                             {{ Form::hidden('_method', 'DELETE') }}
-                            {{ Form::submit('Delete') }}
+                            {{ Form::submit('Delete', ['class' => 'btn btn-xs btn-danger']) }}
                         {{ Form::close() }}
                     </td>
                 </tr>

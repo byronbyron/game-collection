@@ -34,7 +34,9 @@
 @endif
 
 @if ($user->isCurrent())
-    {{ link_to_route('profile.edit', 'Edit your profile', $user->username) }}
+    <div class="form-group">
+        {{ link_to_route('profile.edit', 'Edit your profile', $user->username, ['class' => 'btn btn-link']) }}
+    </div>
 @endif
     
 @stop

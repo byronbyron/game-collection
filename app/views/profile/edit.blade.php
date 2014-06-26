@@ -8,42 +8,36 @@
 
 {{ Form::model($user->profile, ['method' => 'PATCH', 'route' => ['profile.update', $user->username]]) }}
 
-<ul>
-    <!-- Location Field -->
-    <li>
-        {{ Form::label('location', 'Location:') }}
-        {{ Form::text('location') }}
-    </li>
-
-    <!-- Bio Field -->
-    <li>
-        {{ Form::label('bio', 'Bio:') }}
-        {{ Form::textarea('bio') }}
-    </li>
-
-    <!-- Twitter Username Field -->
-    <li>
-        {{ Form::label('twitter_username', 'Twitter Username:') }}
-        {{ Form::text('twitter_username') }}
-    </li>
-
-    <!-- Facebook Handle Field -->
-    <li>
-        {{ Form::label('facebook_username', 'Facebook Username:') }}
-        {{ Form::text('facebook_username') }}
-    </li>
-
-    <!-- GitHub Username Field -->
-    <li>
-        {{ Form::label('github_username', 'GitHub Username:') }}
-        {{ Form::text('github_username') }}
-    </li>
-
-    <!-- Save Field -->
-    <li>
-        {{ Form::submit('Update Profile') }}
-    </li>
-</ul>
+<!-- Location Field -->
+<div class="form-group">
+    {{ Form::label('location', 'Location:') }}
+    {{ Form::text('location', null, ['class' => 'form-control']) }}
+</div>
+<!-- Bio Field -->
+<div class="form-group">
+    {{ Form::label('bio', 'Bio:') }}
+    {{ Form::textarea('bio', null, ['class' => 'form-control']) }}
+</div>
+<!-- Twitter Username Field -->
+<div class="form-group">
+    {{ Form::label('twitter_username', 'Twitter Username:') }}
+    {{ Form::text('twitter_username', null, ['class' => 'form-control']) }}
+</div>
+<!-- Facebook Handle Field -->
+<div class="form-group">
+    {{ Form::label('facebook_username', 'Facebook Username:') }}
+    {{ Form::text('facebook_username', null, ['class' => 'form-control']) }}
+</div>
+<!-- GitHub Username Field -->
+<div class="form-group">
+    {{ Form::label('github_username', 'GitHub Username:') }}
+    {{ Form::text('github_username', null, ['class' => 'form-control']) }}
+</div>
+<!-- Save Field -->
+<div class="form-group">
+    {{ Form::submit('Update Profile', ['class' => 'btn btn-success']) }}
+    {{ link_to_profile('Cancel', ['class' => 'btn btn-default']) }}
+</div>
 
 {{ Form::close() }}
 

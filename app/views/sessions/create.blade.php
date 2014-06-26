@@ -10,26 +10,24 @@
 
 {{ Form::open(['route' => 'sessions.store']) }}
 
-<ul>
-    <!-- Email Field -->
-    <li>
-        {{ Form::label('email', 'Email') }}
-        {{ Form::email('email') }}
-        {{ errors_for('email', $errors) }}
-    </li>
+<!-- Email Field -->
+<div class="form-group">
+    {{ Form::label('email', 'Email') }}
+    {{ Form::email('email', null, ['class' => 'form-control']) }}
+    {{ errors_for('email', $errors) }}
+</div>
 
-    <!-- Password Field -->
-    <li>
-        {{ Form::label('password', 'Password') }}
-        {{ Form::password('password') }}
-        {{ errors_for('password', $errors) }}
-    </li>
+<!-- Password Field -->
+<div class="form-group">
+    {{ Form::label('password', 'Password') }}
+    {{ Form::password('password', ['class' => 'form-control']) }}
+    {{ errors_for('password', $errors) }}
+</div>
 
-    <!-- Submit Field -->
-    <li>
-        {{ Form::submit('Login') }}
-    </li>
-</ul>
+<!-- Submit Field -->
+<div class="form-group">
+    {{ Form::submit('Login', ['class' => 'btn btn-success']) }}
+</div>
 
 {{ Form::close() }}
 
