@@ -2,12 +2,14 @@
 
 @section('content')
 
-<h1>
-    {{ $user->username }}
-    @if ($user->profile->location)
-        <small>{{ $user->profile->location }}</small>
-    @endif
-</h1>
+<div class="page-header">
+    <h1>
+        {{ $user->username }}
+        @if ($user->profile->location)
+            <small>{{ $user->profile->location }}</small>
+        @endif
+    </h1>
+</div>
 
 @if ($user->profile->bio)
     <p>{{ $user->profile->bio }}</p>

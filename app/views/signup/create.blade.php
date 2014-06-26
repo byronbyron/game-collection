@@ -3,8 +3,10 @@
 @section('meta-title', 'Sign up - Game Collerction')
 
 @section('content')
-    
-<h1>Sign up</h1>
+
+<div class="page-header">
+    <h1>Sign up</h1>
+</div>
     
 {{ Form::open(['route' => 'signup.store']) }}
 

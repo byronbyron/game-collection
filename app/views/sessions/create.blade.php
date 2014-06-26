@@ -4,7 +4,9 @@
 
 @section('content')
 
-<h1>Login</h1>
+<div class="page-header">
+    <h1>Login</h1>
+</div>
 
 {{ Form::open(['route' => 'sessions.store']) }}
 

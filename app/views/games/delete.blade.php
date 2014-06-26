@@ -1,8 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    
-<h1>Delete {{ $game->title }} <small>Are you sure?</small></h1>
+
+<div class="page-header">
+    <h1>Delete {{ $game->title }} <small>Are you sure?</small></h1>
+</div>
 
 {{ Form::open() }}
 

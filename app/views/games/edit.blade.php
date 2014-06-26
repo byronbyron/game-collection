@@ -2,7 +2,9 @@
 
 @section('content')
 
-<h1>Edit Game</h1>
+<div class="page-header">
+    <h1>Edit Game</h1>
+</div>
 
 {{ Form::model($game, ['method' => 'PATCH', 'route' => ['games.update', $game->id]]) }}
     

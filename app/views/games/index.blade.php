@@ -2,8 +2,10 @@
 
 @section('content')
 
-<h1>Games</h1>
- 
+<div class="page-header">
+    <h1>Games</h1>
+</div>
+
 <p>{{ link_to_action('games.create', 'Create New Game') }}</p>
 
 @if ($games->isEmpty())
