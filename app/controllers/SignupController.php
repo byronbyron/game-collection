@@ -53,6 +53,7 @@ class SignupController extends \BaseController {
 
 		Auth::login($user);
 
+		Flash::success('You have successfully signed up!');
 		return Redirect::home();		
 	}
 

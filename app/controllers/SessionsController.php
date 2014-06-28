@@ -37,10 +37,12 @@ class SessionsController extends \BaseController {
 
 		if (Auth::attempt($input))
 		{
-			return Redirect::intended('/')->with('flash_message', 'You have been logged in successfully!');
+			Flash::success('You have been logged in successfully!');
+			return Redirect::intended('/');
 		}
 
-		return Redirect::back()->withInput()->with('flash_message', 'Wrong Email and password combination.');
+		Flash::error('Wrong Email and password combination.');
+		return Redirect::back()->withInput();
 	}
 
 	/**
@@ -53,7 +55,8 @@ class SessionsController extends \BaseController {
 	{
 		Auth::logout();
 
-		return Redirect::home()->with('flash_message', 'You have been logged out.');
+		Flash::message('You have been logged out.');
+		return Redirect::home();
 	}
 
 }

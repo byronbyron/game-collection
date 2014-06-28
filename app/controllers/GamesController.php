@@ -41,9 +41,11 @@ class GamesController extends \BaseController {
 
 		if ( ! $game->save())
 		{
+			Flash::error('Failed to create game');
 			return Redirect::back()->withErrors($game->getErrors())->withInput();
 		}
 
+		Flash::success('Game created successfully!');
 		return Redirect::route('games.index');
 	}
 
@@ -89,9 +91,11 @@ class GamesController extends \BaseController {
 
 		if ( ! $game->save())
 		{
+			Flash::error('Failed to save game');
 			return Redirect::back()->withErrors($game->getErrors())->withInput();
 		}
 
+		Flash::success('Game updated successfully!');
 		return Redirect::route('games.index');
 	}
 
@@ -106,6 +110,7 @@ class GamesController extends \BaseController {
 		$game = Game::findOrFail($id);
 		$game->delete();
 
+		Flash::error('Game deleted successfully.');
 		return Redirect::route('games.index');
 	}
 

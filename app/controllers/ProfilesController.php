@@ -60,7 +60,8 @@ class ProfilesController extends \BaseController {
 
 		$user->profile->fill($input)->save();
 
-		return Redirect::route('profile.edit', $user->username)->with('flash_message', 'Profile updates successfully.');
+		Flash::success('Profile updated successfully!');
+		return Redirect::route('profile.edit', $user->username);
 	}
 
 }
