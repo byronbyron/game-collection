@@ -1,7 +1,11 @@
 <?php
 
+require __DIR__ . '/support/ViewHelpers.php';
+
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
+	use ViewHelpers;
+	
 	/**
 	 * Creates the application.
 	 *

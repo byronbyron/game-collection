@@ -31,9 +31,7 @@
                 <h3 class="text-muted"><a href="/">Game Collection</a></h3>
             </div>
 
-            @if (Session::get('flash_message'))
-                {{ Session::get('flash_message') }}
-            @endif
+            @include('partials/_flash')
 
             @yield('content')
 
@@ -46,6 +44,7 @@
         <!-- Bootstrap core JavaScript -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script>$('.flash-modal').modal();</script>
         <!-- Placed at the end of the document so the pages load faster -->
     </body>
 </html>

@@ -21,8 +21,8 @@
 			"app/MyGames/helpers.php"
 		],
 		"psr-4": {
-			"MyGames\\": "app/MyGames"
-		}
+            "MyGames\\": "app/MyGames"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [
