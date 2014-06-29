@@ -1,15 +1,5 @@
 <?php
 
-Route::get('test', function()
-{
-    Flash::message('Welcome aboard');
-    // Flash::success('Welcome aboard');
-    // Flash::error('Welcome aboard');
-    // Flash::overlay('Welcome aboard');
-
-    return Redirect::to('/');
-});
-
 # Home
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@index']);
 
@@ -28,3 +18,8 @@ Route::resource('games', 'GamesController');
 # Profile
 Route::resource('profile', 'ProfilesController', ['only' => ['show', 'edit', 'update']]);
 Route::get('/{profile}', ['as' => 'profile', 'uses' => 'ProfilesController@show']);
+
+Route::get('reporting', function()
+{
+    return 'secret financial reports';
+})->before('role:owner');

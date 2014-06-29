@@ -9,7 +9,7 @@ class RolesTableSeeder extends Seeder {
         ]);
         
         Role::create([
-            'name' => 'admin'
+            'name' => 'administrator'
         ]);
 	}
 
